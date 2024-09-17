@@ -1,0 +1,119 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafío 2 Proyecto 2</title>
+
+    <!--CDN BOOSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <!--ESTILOS-->
+    <link rel="stylesheet" href="formulario.css">
+    <style>
+       .invalido {
+    border: 1px solid red;
+    background-color: #ffcccc;
+  }
+  #mensaje-error-maxProductos{
+    color: red;
+  }
+  #mensaje-error-iva{
+    color: red;
+  }
+      </style>
+</head>
+
+<body>
+    <h1 id="main-title" class="mt-5 text-center text-light">Sistema de facturación</h1>
+    <main class="m-0 w-100 d-flex justify-content-around align-items-center">
+
+        <div id="forms-container">
+            <div class="mb-5 form__container d-flex justify-content-center">
+                <form name="form1" id="form-1"
+                    class="forms form-control h-100 d-flex flex-column justify-content-evenly align-items-baseline">
+                    <h4 class="align-self-center text-center">Ingrese los siguientes datos</h4>
+                    <div class="form-control">
+                        <label class="fw-bold" for="max-productos">Máximo de productos</label>
+                        <input class="form-control" type="number" name="maxProductos"
+                            placeholder="Ejemplo: 10 (Para 10 productos)" oninput="validarNumero(this)">
+                            <div id="mensaje-error-maxProductos"></div>
+                    </div>
+                    <div class="form-control">
+                        <label class="fw-bold" for="iva">Número de porcentaje IVA</label>
+                        <input class="form-control" type="number" name="iva"
+                            placeholder="Ejemplo: 12 (para 12% de IVA)" oninput="validarNumero(this)">
+                            <div id="mensaje-error-iva"></div>
+                    </div>
+                    <input type="button" id="btn-siguiente" class="btn btn-lg btn-success align-self-center"
+                        value="Siguiente">
+                </form>
+
+                <form name="form2" id="form-2"
+                    class="forms form-control h-100 d-flex flex-column justify-content-evenly align-items-baseline">
+                    <h4 class="align-self-center text-center">Registro de productos</h4>
+                    <div class="form-control">
+                        <label class="fw-bold" for="nombre">Nombre del producto</label>
+                        <input class="form-control" name="nombre" type="text" placeholder="Ejemplo: Pan">
+                        <span id="error-nombre" class="error-msg form-text text-danger">El producto ya existe o no es
+                            válido</span>
+                    </div>
+                    <div class="form-control">
+                        <label class="fw-bold" for="cantidad">Cantidad</label>
+                        <input class="form-control" name="cantidad" type="number" placeholder="Ejemplo: 3">
+                        <span id="error-cantidad" class="error-msg form-text text-danger">Ingrese una cantidad
+                            válida</span>
+                    </div>
+                    <div class="form-control">
+                        <label class="fw-bold" for="precio">Precio</label>
+                        <input class="form-control" name="precio" type="number" placeholder="Ejemplo: 500">
+                        <span id="error-precio" class="error-msg form-text text-danger">Ingrese un precio válido</span>
+                    </div>
+                    <input id="btn-agregar" type="button" class="btn btn-lg btn-success align-self-center"
+                        value="Agregar">
+
+                    <p class="text-center w-100">Máximo de productos restante: <span id="max-rest"></span></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="factura" class="mb-5">
+            <div class="table__container">
+                <h4 id="table-title" class="text-center">Productos procesados</h4>
+                <div class="d-flex justify-content-evenly align-items-center">
+                    <p><b>Sub total: </b><span id="t-subtotal">0</span>$</p>
+                    <p><b>Monto IVA (<span id="iva-prc"></span>):</b> <span id="t-montoIva">0</span>$</p>
+                    <p><b>Total:</b> <span id="t-total">0</span>$</p>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+            </div>
+            <input id="btn-imp" class="btn btn-primary w-100" type="button" value="Imprimir factura">
+            <input id="btn-volver" class="btn btn-danger w-100" type="button" value="Registrar otra factura">
+        </div>
+
+        <div id="loading">
+            <h2 class="text-light">Imprimiendo Factura</h2>
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif">
+        </div>
+
+
+    </main>
+    <h6 id="main-msg" class="text-light text-center">Los valores por defecto del Máximo de productos y el IVA son (Sin
+        límite) y (16%) Respectivamente</h6>
+</body>
+<script src="formulario.js"></script>
+
+</html>

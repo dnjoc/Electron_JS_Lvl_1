@@ -1,0 +1,11 @@
+Crear un proyecto nuevo para crear una aplicación de escritorio usando Electron, que cumpla con los siguientes requerimientos:
+
+1.- Ninguna de las ventanas de la aplicación debe tener el menú por defecto que tienen las ventanas, por lo tanto, debe establecer a null el menú de la aplicación
+
+2.- La ventana principal de la aplicación deben tener una barra de menú con las siguientes opciones: 1) Alumnos, sub opciones: 1.1)Listado, 1.2)Nuevo, 1.3)Buscar. 2)Secciones, sub opciones: 2.1)Abrir Sección, 2.2)Inscribir Alumno, 2.2)Imprimir Facturas. 3)Sistema, sub opciones: 3.1)Ayuda, 3.2)Acerca de, 3.3)DevTools, 3.4) una linea separadora, es decir, una linea -------------, 3.5)Salir. En en el menuItem que es una linea separadora, deben usar la propiedad "type" apropiada. Para cumplir con este requerimiento, debe definir una plantilla de menú en un archivo JS aparte, y crear un menú en base a esa plantilla
+
+3.- Crear una ventana (que sera la ventana principal) y asignarle a esta ventana el menú creado en el requerimiento anterior
+
+4.- Programar las opciones del menú "Alumnos" y "Secciones" para que se abra una ventana que tenga como titulo el texto de cada una de sus sub opciones, pero evitando que se abra mas de una vez la misma ventana. Ejemplo: si el usuario hace clic en la opción Alumnos ->Listado, se abre una ventana con el titulo "Listado de alumnos", pero si el usuario vuelve a hacer clic en esa opción y la ventana no ha sido cerrada por el usuario, no se abre una ventana nueva sino que se vuelve a mostrar la ventana que ya había sido abierta. Esto con el fin de que no hayan varias instancias de la misma ventana asociada a una opción de menú. Recuerde que ninguna de estas ventanas que se abran en las opciones de menú debe tener menú
+
+5.- Programar las sub opciones del menú "Sistema" usando la propiedad "role" de la clase MenuItem

@@ -1,0 +1,11 @@
+Crear un proyecto Electron nuevo, para programar en el archivo main.js lo necesario para cumplir con los siguientes requerimientos:
+
+1.- Crear una ventana que no se muestre al crearse. Luego debe cargarle una URL arbitraria (la de su preferencia). Hacer que la página se muestre después de que esté lista para mostrarse (usar el evento apropiado de BrowserWindow)
+
+2.- Luego de que se muestra la ventana del requerimiento anterior, (programando el evento apropiado de BrowserWindow (diferente al usado en el requerimiento anterior), crear un timeout que active una cuenta regresiva de 30 segundos. Cada vez que transcurra 1 segundo, se debe mostrar en el titulo de la ventana la cantidad de segundos que van quedando en el contador (usar el método apropiado para cambiar el título de la ventana)
+
+3.- Cuando queden 15 segundos en el contador de tiempo del requerimiento anterior, debe maximizarze por programación la ventana (usar el método correcto de BrowserWindow)
+
+4.- Programar en el evento "maximize" de la ventana (es decir, cuando se maximice la ventana), usando el objeto "dialog", mostrar una ventana de dialogo para preguntar al usuario si desea que se abra otra ventana con otra URL. En caso afirmativo, crear nueva ventana que debe aparecer en un lugar aleatorio de la pantalla (estableciendo los valores apropiados en el constructor de la ventana)
+
+5.- Al llegar el timeout del objetivo 2 a cero segundos, usando el objeto "dialog", se debe mostrar un mensaje al usuario indicando que se acabó el tiempo. Cuando el usuario cierre la ventana de dialogo, deben cerrarse todas las ventanas que se hayan abierto, una por una, usando el método estático que retorna todas las ventanas abiertas. Este mensaje debe ser modal a la ventana Main

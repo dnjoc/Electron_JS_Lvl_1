@@ -1,0 +1,11 @@
+Realizar las siguientes actividades
+
+1.- Clonar el proyecto que esta en la URL https://gitlab.com/secciones-cadif1/ejemplo_electron.git. Entrar a la carpeta e instalar los paquetes que utiliza la aplicación para finalmente ejecutar la aplicación (hacer captura de pantalla de cada paso)
+
+2.- Verificar por linea de comandos cuales paquetes están desactualizados (npm outdated). Verificar en la calculadora de versiones (https://semver.npmjs.com/) cuales versiones del paquete Electron son compatibles con el paquete instalado (según la política de actualización de especificada en el package.json). Debe hacer captura de pantalla de cada paso
+
+3.- Actualizar los paquetes ejecutando el comando npm update. Verificar nuevamente los paquetes desactualizados. Ejecutar la aplicación para verificar que todo funciona correctamente
+
+4.- Hacer cambios en el archivo HTML y en el JavaScript (los que sean necesarios), de modo que el usuario no pueda hacer click en el botón "Siguiente" de la primera interfaz que se muestra, si no ha escrito un numero mayor a 0 en ambos inputs (máximo de productos y porcentaje de iva)
+
+5.- Modificar el archivo package.json para actualizar la política de actualización del paquete Electron, para que use a la ultima versión disponible en NPM. Luego de modificar el archivo, ejecutar el comando npm update y ejecutar la aplicación para verificar que se ejecuta sin problemas. Debe hacer captura de pantalla de cada paso

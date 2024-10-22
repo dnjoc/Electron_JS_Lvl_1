@@ -1,0 +1,11 @@
+Crear una aplicación de consola usando Node.js para simular un punto de venta, que permita facturar los productos que compra un cliente en una tienda. Crear un archivo JS y escribir el código necesario para cumplir con los siguientes requerimientos:
+
+1.- Inicializar el proyecto para crear el archivo package.json y luego instalar el paquete https://www.npmjs.com/package/readline-sync (enviar captura de pantalla de la creación del archivo package.json y de la instalación exitosa del paquete)
+
+2.- Usando el paquete instalado readline-sync, leer por el teclado el nombre del cliente y el Rif
+
+3.- Posteriormente a las lecturas del requerimiento 2, hacer un ciclo para leer los datos de los productos que se agregaran como items de la factura, donde se lea de cada producto el nombre, la cantidad a comprar de ese producto y su precio (cada iteración del ciclo le permitirá al usuario agregar un item a la factura, es decir, un producto con su nombre, cantidad y precio)
+
+4.- Recibir por parámetros de la aplicación un número que representa la cantidad máxima de items que el cliente puede agregar a la factura, es decir, para limitar el ciclo creado en el requerimiento anterior. Si el parámetro no es recibido por la aplicación, debe asumirse que la cantidad máxima de productos que se pueden agregar a la factura es 10
+
+5.- Cuando el cliente haya agregado la cantidad máxima de items a la factura (al terminar el ciclo), debe mostrarse por pantalla el sub total de la factura (sumatoria de los subtotales (cantidad x precio) de cada producto), el monto del IVA (16% del subtotal de la factura) y el total a pagar (sub total de la factura más el monto del IVA)
